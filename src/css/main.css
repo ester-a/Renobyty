@@ -1,3 +1,116 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Manrope", sans-serif;
+    @apply bg-neutral text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-primary font-extrabold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl leading-tight md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl leading-tight md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl leading-snug md:text-3xl;
+  }
+
+  p {
+    @apply text-base leading-7 text-secondary;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  input,
+  textarea,
+  select {
+    @apply w-full rounded-soft border border-border bg-white px-4 py-3 text-base text-ink outline-none transition duration-200 placeholder:text-secondary/70 focus:border-primary focus:ring-4 focus:ring-primary/10;
+  }
+
+  textarea {
+    @apply min-h-32 resize-y;
+  }
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto w-full max-w-container px-5 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-pill px-6 py-3 text-sm font-bold tracking-wide transition duration-200 focus:outline-none focus:ring-4 focus:ring-primary/15;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-neutral shadow-soft hover:bg-primary/90 focus:ring-primary/20;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white text-primary ring-1 ring-border hover:bg-neutral;
+  }
+
+  .btn-accent {
+    @apply btn bg-tertiary text-white shadow-soft hover:bg-tertiary/90;
+  }
+
+  .btn-outline {
+    @apply btn border border-primary bg-transparent text-primary hover:bg-primary hover:text-white;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center rounded-pill border border-tertiary/35 bg-tertiary/15 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.24em] text-neutral;
+  }
+
+  .section-title {
+    @apply max-w-3xl text-3xl font-extrabold leading-tight text-primary md:text-5xl;
+  }
+
+  .section-copy {
+    @apply max-w-2xl text-base leading-7 text-secondary md:text-lg;
+  }
+
+  .navbar-shell {
+    @apply border-b border-border bg-neutral;
+  }
+
+  .navbar-inner {
+    @apply mx-auto w-full max-w-none px-6 sm:px-8 lg:px-10 xl:px-12 2xl:px-14;
+  }
+
+  .nav-link {
+    @apply inline-flex items-center border-b-2 border-transparent px-0 py-2 text-[1.05rem] font-extrabold tracking-tight text-secondary hover:border-tertiary hover:text-primary focus:outline-none focus-visible:border-tertiary focus-visible:text-primary;
+  }
+
+  .nav-link-active {
+    @apply border-tertiary text-primary;
+  }
+
+  .mobile-menu-panel {
+    @apply mt-4 rounded-card border border-border bg-neutral p-4 shadow-card;
+  }
+}

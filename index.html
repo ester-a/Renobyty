@@ -3,26 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Renobyty | Domov</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Renobyty | Domů</title>
     <script type="module" src="/src/js/main.js"></script>
   </head>
-  <body class="bg-slate-50 text-slate-900">
-    <header class="border-b border-slate-200 bg-white">
-      <div class="mx-auto max-w-6xl px-6 py-6">
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-600">Header placeholder</p>
-      </div>
+  <body class="bg-neutral text-ink">
+    <header class="absolute inset-x-0 top-0 z-50">
+      <nav
+        class="border-b border-neutral/10 bg-primary/10 backdrop-blur-lg"
+        aria-label="Hlavní navigace"
+        data-nav
+      >
+        <div class="navbar-inner grid min-h-[5.5rem] grid-cols-[auto_1fr_auto] items-center gap-3 py-2 sm:min-h-[5.75rem] sm:py-3 lg:min-h-[6rem] lg:grid-cols-[minmax(11rem,1fr)_auto_auto] lg:gap-6 min-[1150px]:grid-cols-[minmax(16rem,1fr)_auto_minmax(20rem,1fr)] min-[1150px]:gap-12">
+          <button
+            type="button"
+            class="inline-flex items-center justify-center rounded-pill bg-neutral/10 p-2.5 text-neutral transition hover:bg-neutral/15 focus:outline-none focus:ring-2 focus:ring-neutral/20 lg:hidden"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Otevřít menu"
+            data-nav-toggle
+          >
+            <span class="flex flex-col gap-1.5">
+              <span class="h-0.5 w-6 bg-current"></span>
+              <span class="h-0.5 w-6 bg-current"></span>
+              <span class="h-0.5 w-6 bg-current"></span>
+            </span>
+          </button>
+
+          <a href="/index.html" class="text-[2rem] font-extrabold uppercase tracking-[-0.05em] text-neutral sm:text-[2.15rem] lg:text-[1.95rem] min-[1150px]:text-[2.35rem]">
+            RENOBYTY
+          </a>
+
+          <div class="hidden items-center justify-center gap-8 min-[1150px]:gap-12 xl:gap-16 lg:flex">
+            <a href="/index.html" class="nav-link nav-link-active border-tertiary text-neutral hover:text-neutral">Domů</a>
+            <a href="/services.html" class="nav-link border-transparent !text-neutral/95 hover:border-tertiary hover:!text-neutral">Služby</a>
+            <a href="/portfolio.html" class="nav-link border-transparent !text-neutral/95 hover:border-tertiary hover:!text-neutral">Portfolio</a>
+            <a href="/contact.html" class="nav-link border-transparent !text-neutral/95 hover:border-tertiary hover:!text-neutral">Kontakt</a>
+          </div>
+
+          <div class="ml-auto inline-flex items-center rounded-full border border-neutral/20 bg-neutral/10 px-4 py-2 text-[0.95rem] font-bold text-neutral shadow-soft backdrop-blur-sm sm:px-5 sm:py-2.5 lg:hidden">
+            <span>CZ</span>
+            <span class="mx-2 text-neutral/35">|</span>
+            <span>EN</span>
+          </div>
+
+          <div class="hidden items-center justify-self-end gap-3 min-[1150px]:gap-5 xl:gap-8 lg:flex">
+            <div class="inline-flex items-center rounded-full border border-neutral/20 bg-neutral/10 px-4 py-2.5 text-sm font-bold text-neutral shadow-soft backdrop-blur-sm min-[1150px]:px-6 min-[1150px]:py-3.5 min-[1150px]:text-[1.05rem]">
+              <span>CZ</span>
+              <span class="mx-2 text-neutral/35">|</span>
+              <span>EN</span>
+            </div>
+            <a href="/contact.html" class="btn-primary min-w-[10.75rem] bg-primary px-5 py-3 text-center text-sm text-neutral hover:bg-primary/90 min-[1150px]:min-w-[13.5rem] min-[1150px]:px-8 min-[1150px]:py-4 min-[1150px]:text-[1.05rem]">
+              Nezávazná nabídka
+            </a>
+          </div>
+
+          <div id="mobile-menu" class="mobile-menu-panel hidden lg:hidden col-span-full border-neutral/20 bg-primary/88 backdrop-blur-md" data-nav-panel>
+            <div class="flex flex-col gap-2">
+              <a href="/index.html" class="nav-link nav-link-active justify-start border-tertiary text-neutral hover:text-neutral" data-nav-close>Domů</a>
+              <a href="/services.html" class="nav-link justify-start border-transparent !text-neutral/95 hover:border-tertiary hover:!text-neutral" data-nav-close>Služby</a>
+              <a href="/portfolio.html" class="nav-link justify-start border-transparent !text-neutral/95 hover:border-tertiary hover:!text-neutral" data-nav-close>Portfolio</a>
+              <a href="/contact.html" class="nav-link justify-start border-transparent !text-neutral/95 hover:border-tertiary hover:!text-neutral" data-nav-close>Kontakt</a>
+            </div>
+            <div class="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div class="inline-flex items-center rounded-full border border-neutral/20 bg-neutral/10 px-5 py-3 text-sm font-bold text-neutral shadow-soft backdrop-blur-sm">
+                <span>CZ</span>
+                <span class="mx-2 text-neutral/35">|</span>
+                <span>EN</span>
+              </div>
+              <a href="/contact.html" class="btn-primary bg-primary px-6 py-3 text-center text-neutral hover:bg-primary/90" data-nav-close>
+                Nezávazná nabídka
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
-    <main class="mx-auto max-w-6xl px-6 py-16">
-      <section class="rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200">
-        <span class="inline-flex rounded-full bg-sky-100 px-4 py-2 text-sm font-medium text-sky-700">Tailwind is working</span>
-        <h1 class="mt-6 text-4xl font-bold tracking-tight text-slate-900">Hlavni stranka</h1>
-        <p class="mt-4 text-lg text-slate-600">Placeholder sekce pro uvodni obsah.</p>
+
+    <main>
+      <section
+        class="relative isolate min-h-screen overflow-hidden bg-primary"
+        aria-labelledby="hero-title"
+      >
+        <img
+          src="/images/hero_home.jpg"
+          alt="Luxusní rekonstrukce interiéru"
+          class="absolute inset-0 h-full w-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/28 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/24 via-primary/8 to-transparent"></div>
+
+        <div class="container-shell relative flex min-h-screen items-end py-28 sm:py-32 lg:py-24">
+          <div class="max-w-[42rem] pb-12 sm:pb-16 lg:pb-20 text-neutral">
+            <span class="eyebrow backdrop-blur-sm">
+              Prémiová kvalita v Praze
+            </span>
+            <h1 id="hero-title" class="section-title mt-6 max-w-[14ch] !leading-[1.12] text-neutral sm:!leading-[1.14]">
+              Kompletní rekonstrukce bytů a koupelen na klíč
+            </h1>
+            <p class="section-copy mt-8 max-w-[41rem] text-base text-neutral/80 sm:text-lg">
+              Od roku 2010 v Praze a Ústeckém kraji. Osobní přístup a důraz na detail,
+              který promění váš prostor v architektonické dílo.
+            </p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <a
+                href="/contact.html"
+                class="btn-primary justify-center bg-tertiary px-6 py-3.5 text-center text-primary shadow-card hover:bg-tertiary/90 hover:text-primary focus:ring-tertiary/20"
+              >
+                Chci nezávaznou nabídku
+              </a>
+              <a
+                href="/portfolio.html"
+                class="btn-secondary justify-center border border-neutral/30 bg-neutral/10 px-6 py-3.5 text-center text-neutral ring-0 backdrop-blur-sm hover:border-neutral/50 hover:bg-neutral/15 hover:text-neutral"
+              >
+                Naše reference
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
-    <footer class="border-t border-slate-200 bg-white">
-      <div class="mx-auto max-w-6xl px-6 py-6">
-        <p class="text-sm text-slate-500">Footer placeholder</p>
-      </div>
-    </footer>
+
+    <footer></footer>
   </body>
 </html>
