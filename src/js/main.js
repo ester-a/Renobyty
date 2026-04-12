@@ -1,5 +1,9 @@
 import "../css/main.css";
 
+if (window.lucide?.createIcons) {
+  window.lucide.createIcons();
+}
+
 const navInstances = document.querySelectorAll("[data-nav]");
 
 navInstances.forEach((nav) => {

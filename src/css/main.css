@@ -7,9 +7,25 @@
     scroll-behavior: smooth;
   }
 
+  #kontakt {
+    scroll-margin-top: 6.5rem;
+  }
+
+  @media (min-width: 768px) {
+    #kontakt {
+      scroll-margin-top: 7.5rem;
+    }
+  }
+
+  @media (min-width: 1150px) {
+    #kontakt {
+      scroll-margin-top: 9rem;
+    }
+  }
+
   body {
     font-family: "Manrope", sans-serif;
-    @apply bg-neutral text-ink antialiased;
+    @apply bg-white text-ink antialiased;
   }
 
   h1,
@@ -112,5 +128,41 @@
 
   .mobile-menu-panel {
     @apply mt-4 rounded-card border border-border bg-neutral p-4 shadow-card;
+  }
+
+  .service-card {
+    @apply flex h-full flex-col items-start rounded-card border border-border bg-white p-8 shadow-soft transition duration-200 hover:-translate-y-1 hover:border-primary/20 hover:shadow-card;
+  }
+
+  .service-icon {
+    @apply inline-flex h-14 w-14 items-center justify-center rounded-soft bg-primary text-neutral shadow-soft ring-1 ring-border/30;
+  }
+
+  .service-stack {
+    @apply flex h-full w-full flex-col items-start;
+  }
+
+  .service-heading {
+    @apply mt-7 flex min-h-[5.5rem] w-full items-start;
+  }
+
+  .service-body {
+    @apply mt-4 w-full text-[1.05rem] leading-8 text-secondary;
+  }
+
+  .contact-detail {
+    @apply flex items-start gap-4 rounded-soft border border-border bg-white p-5 shadow-soft;
+  }
+
+  .footer-title {
+    @apply text-sm font-extrabold uppercase tracking-[0.2em] text-primary;
+  }
+
+  .footer-link {
+    @apply text-[0.98rem] leading-7 text-secondary transition duration-200 hover:text-primary;
+  }
+
+  .mobile-action-link {
+    @apply flex min-w-0 flex-1 flex-col items-center justify-center gap-1 rounded-soft px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-neutral/80 transition duration-200;
   }
 }
