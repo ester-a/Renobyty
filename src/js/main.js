@@ -5,6 +5,7 @@ if (window.lucide?.createIcons) {
 }
 
 const navInstances = document.querySelectorAll("[data-nav]");
+const filterGroups = document.querySelectorAll("[data-filter-group]");
 
 navInstances.forEach((nav) => {
   const toggle = nav.querySelector("[data-nav-toggle]");
@@ -46,5 +47,39 @@ navInstances.forEach((nav) => {
     if (event.key === "Escape") {
       closeMenu();
     }
+  });
+});
+
+filterGroups.forEach((group) => {
+  const buttons = [...group.querySelectorAll("[data-filter]")];
+  const items = [...document.querySelectorAll("[data-filter-item]")];
+
+  if (!buttons.length || !items.length) {
+    return;
+  }
+
+  const setActiveFilter = (value) => {
+    buttons.forEach((button) => {
+      button.dataset.active = String(button.dataset.filter === value);
+      button.setAttribute("aria-pressed", String(button.dataset.filter === value));
+    });
+
+    items.forEach((item) => {
+      const categories = item.dataset.categories?.split(" ") ?? [];
+      const shouldShow = value === "all" || categories.includes(value);
+
+      item.classList.toggle("hidden", !shouldShow);
+    });
+  };
+
+  const initialFilter =
+    buttons.find((button) => button.dataset.active === "true")?.dataset.filter || "all";
+
+  setActiveFilter(initialFilter);
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      setActiveFilter(button.dataset.filter || "all");
+    });
   });
 });

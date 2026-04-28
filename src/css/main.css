@@ -165,4 +165,86 @@
   .mobile-action-link {
     @apply flex min-w-0 flex-1 flex-col items-center justify-center gap-1 rounded-soft px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-neutral/80 transition duration-200;
   }
+
+  .portfolio-filter {
+    @apply inline-flex items-center rounded-full border border-border bg-white px-5 py-2.5 text-sm font-bold text-secondary shadow-soft transition duration-200 hover:border-primary hover:text-primary;
+  }
+
+  .portfolio-hero-secondary {
+    @apply btn text-neutral shadow-card;
+    min-height: 3.375rem;
+    background-color: rgba(26, 46, 68, 0.92);
+    border: 1px solid rgba(248, 249, 250, 0.22);
+    backdrop-filter: blur(10px);
+  }
+
+  .portfolio-hero-secondary:hover {
+    background-color: rgba(26, 46, 68, 0.82);
+  }
+
+  .portfolio-filter[data-active="true"] {
+    @apply border-primary bg-primary text-neutral shadow-card;
+  }
+
+  .portfolio-card {
+    @apply relative flex min-h-[24rem] overflow-hidden rounded-card border border-border bg-primary shadow-card transition duration-300 hover:-translate-y-1;
+  }
+
+  .portfolio-card-image {
+    @apply absolute inset-0 h-full w-full object-cover transition duration-500;
+  }
+
+  .portfolio-card-overlay {
+    @apply absolute inset-0;
+    background: linear-gradient(
+      180deg,
+      rgba(26, 46, 68, 0.1) 0%,
+      rgba(26, 46, 68, 0.3) 45%,
+      rgba(26, 46, 68, 0.92) 100%
+    );
+  }
+
+  .portfolio-card-copy {
+    @apply relative mt-auto flex w-full items-end justify-between gap-4 p-6 text-neutral sm:p-7;
+  }
+
+  .portfolio-card-meta {
+    @apply text-xs font-extrabold uppercase tracking-[0.18em] text-tertiary;
+  }
+
+  .portfolio-card-title {
+    @apply mt-3 text-[1.6rem] leading-tight text-white;
+  }
+
+  .portfolio-card-arrow {
+    @apply inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white backdrop-blur-sm transition duration-200;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .portfolio-card:hover .portfolio-card-image {
+    transform: scale(1.04);
+  }
+
+  .portfolio-card:hover .portfolio-card-arrow {
+    @apply text-tertiary;
+    border-color: rgba(212, 140, 69, 0.6);
+  }
+
+  .portfolio-check {
+    @apply flex items-start gap-3 text-base font-semibold leading-7;
+    color: rgba(248, 249, 250, 0.82);
+  }
+
+  .portfolio-check-icon {
+    @apply mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-tertiary text-primary;
+  }
+
+  .detail-list-item {
+    @apply flex items-start gap-3 rounded-soft border border-border bg-white p-4 text-base font-medium leading-7 text-ink;
+  }
+
+  .detail-list-icon {
+    @apply mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-neutral;
+  }
 }

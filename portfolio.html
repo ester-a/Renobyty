@@ -83,9 +83,304 @@
     </header>
 
     <main>
-      <!-- sections -->
+      <section class="relative isolate overflow-hidden bg-primary" aria-labelledby="portfolio-hero-title">
+        <img
+          src="/images/hero_portfolio.jpg"
+          alt="Ukázka realizované koupelny Renobyty"
+          class="absolute inset-0 h-full w-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/72 to-primary/42"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-primary/35"></div>
+
+        <div class="container-shell relative py-20 sm:py-24 lg:py-32">
+          <div class="max-w-3xl text-neutral">
+            <span class="eyebrow border-tertiary/35 bg-tertiary/15 text-tertiary/95">
+              Realizace
+            </span>
+            <h1 id="portfolio-hero-title" class="mt-6 max-w-[11.5ch] text-5xl leading-[1.1] text-white sm:text-6xl sm:leading-[1.08]">
+              Poctivé rekonstrukce koupelen a bytů
+            </h1>
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-[#F1F4F7] sm:text-xl">
+              Vybrané ukázky našich realizací v běžných bytech v Praze a Ústeckém kraji.
+              Najdete tu koupelny, bytová jádra i technické opravy, kde šla kvalita a funkčnost na první místo.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a href="#portfolio-grid" class="btn-primary bg-tertiary text-primary hover:bg-tertiary/90 hover:text-primary">
+                Prohlédnout realizace
+              </a>
+              <a href="index.html#kontakt" class="portfolio-hero-secondary">
+                Nezávazná konzultace
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-b border-border/80 bg-white">
+        <div class="container-shell py-7 sm:py-8">
+          <div class="flex flex-wrap gap-3" data-filter-group>
+            <button type="button" class="portfolio-filter" data-filter="all" data-active="true" aria-pressed="true">
+              Vše
+            </button>
+            <button type="button" class="portfolio-filter" data-filter="koupelny" data-active="false" aria-pressed="false">
+              Koupelny
+            </button>
+            <button type="button" class="portfolio-filter" data-filter="bytova-jadra" data-active="false" aria-pressed="false">
+              Bytová jádra
+            </button>
+            <button type="button" class="portfolio-filter" data-filter="technicke-opravy" data-active="false" aria-pressed="false">
+              Technické opravy
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio-grid" class="py-16 sm:py-20 lg:py-24" aria-labelledby="portfolio-grid-title">
+        <div class="container-shell">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div class="max-w-2xl">
+              <span class="text-sm font-extrabold uppercase tracking-[0.24em] text-tertiary">
+                Portfolio
+              </span>
+              <h2 id="portfolio-grid-title" class="section-title mt-5 text-ink">
+                Zakázky, které stojí na detailu, funkci a čistém provedení
+              </h2>
+            </div>
+            <p class="max-w-xl text-base leading-7 text-secondary sm:text-right">
+              Každá karta vede zatím na jeden detail projektu, který můžeme později snadno rozšířit na samostatné stránky pro každou realizaci.
+            </p>
+          </div>
+
+          <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <a href="/portfolio-detail.html" class="portfolio-card" data-filter-item data-categories="koupelny bytova-jadra">
+              <img
+                src="/images/portfolio1.jpg"
+                alt="Ústí nad Labem – rekonstrukce koupelny a bytového jádra"
+                class="portfolio-card-image"
+              />
+              <div class="portfolio-card-overlay"></div>
+              <div class="portfolio-card-copy">
+                <div class="min-w-0">
+                  <p class="portfolio-card-meta">Ústí nad Labem</p>
+                  <h3 class="portfolio-card-title">
+                    Rekonstrukce koupelny a bytového jádra
+                  </h3>
+                </div>
+                <span class="portfolio-card-arrow" aria-hidden="true">
+                  <i data-lucide="arrow-up-right" class="h-5 w-5"></i>
+                </span>
+              </div>
+            </a>
+
+            <a href="/portfolio-detail.html" class="portfolio-card" data-filter-item data-categories="koupelny">
+              <img
+                src="/images/portfolio2.jpg"
+                alt="Litvínov – rekonstrukce koupelny"
+                class="portfolio-card-image"
+              />
+              <div class="portfolio-card-overlay"></div>
+              <div class="portfolio-card-copy">
+                <div class="min-w-0">
+                  <p class="portfolio-card-meta">Litvínov</p>
+                  <h3 class="portfolio-card-title">
+                    Rekonstrukce koupelny
+                  </h3>
+                </div>
+                <span class="portfolio-card-arrow" aria-hidden="true">
+                  <i data-lucide="arrow-up-right" class="h-5 w-5"></i>
+                </span>
+              </div>
+            </a>
+
+            <a href="/portfolio-detail.html" class="portfolio-card" data-filter-item data-categories="koupelny bytova-jadra">
+              <img
+                src="/images/portfolio3.jpg"
+                alt="Teplice – úprava koupelny v panelovém bytě"
+                class="portfolio-card-image"
+              />
+              <div class="portfolio-card-overlay"></div>
+              <div class="portfolio-card-copy">
+                <div class="min-w-0">
+                  <p class="portfolio-card-meta">Teplice</p>
+                  <h3 class="portfolio-card-title">
+                    Úprava koupelny v panelovém bytě
+                  </h3>
+                </div>
+                <span class="portfolio-card-arrow" aria-hidden="true">
+                  <i data-lucide="arrow-up-right" class="h-5 w-5"></i>
+                </span>
+              </div>
+            </a>
+
+            <a href="/portfolio-detail.html" class="portfolio-card" data-filter-item data-categories="technicke-opravy">
+              <img
+                src="/images/portfolio4.jpg"
+                alt="Praha – oprava podlahového vytápění"
+                class="portfolio-card-image"
+              />
+              <div class="portfolio-card-overlay"></div>
+              <div class="portfolio-card-copy">
+                <div class="min-w-0">
+                  <p class="portfolio-card-meta">Praha</p>
+                  <h3 class="portfolio-card-title">
+                    Oprava podlahového vytápění
+                  </h3>
+                </div>
+                <span class="portfolio-card-arrow" aria-hidden="true">
+                  <i data-lucide="arrow-up-right" class="h-5 w-5"></i>
+                </span>
+              </div>
+            </a>
+
+            <a href="/portfolio-detail.html" class="portfolio-card" data-filter-item data-categories="koupelny">
+              <img
+                src="/images/portfolio5.jpg"
+                alt="Praha – rekonstrukce koupelny v bytě"
+                class="portfolio-card-image"
+              />
+              <div class="portfolio-card-overlay"></div>
+              <div class="portfolio-card-copy">
+                <div class="min-w-0">
+                  <p class="portfolio-card-meta">Praha</p>
+                  <h3 class="portfolio-card-title">
+                    Rekonstrukce koupelny v bytě
+                  </h3>
+                </div>
+                <span class="portfolio-card-arrow" aria-hidden="true">
+                  <i data-lucide="arrow-up-right" class="h-5 w-5"></i>
+                </span>
+              </div>
+            </a>
+
+            <a href="/portfolio-detail.html" class="portfolio-card" data-filter-item data-categories="koupelny bytova-jadra">
+              <img
+                src="/images/portfolio6.jpg"
+                alt="Praha – obnova bytového jádra a koupelny"
+                class="portfolio-card-image"
+              />
+              <div class="portfolio-card-overlay"></div>
+              <div class="portfolio-card-copy">
+                <div class="min-w-0">
+                  <p class="portfolio-card-meta">Praha</p>
+                  <h3 class="portfolio-card-title">
+                    Obnova bytového jádra a koupelny
+                  </h3>
+                </div>
+                <span class="portfolio-card-arrow" aria-hidden="true">
+                  <i data-lucide="arrow-up-right" class="h-5 w-5"></i>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="relative overflow-hidden bg-primary py-16 text-neutral sm:py-20 lg:py-24">
+        <div class="absolute right-[-8rem] top-[-6rem] h-64 w-64 rounded-full bg-tertiary/12 blur-3xl"></div>
+        <div class="absolute bottom-[-8rem] right-[-4rem] h-72 w-72 rotate-[32deg] bg-white/5"></div>
+
+        <div class="container-shell relative grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
+          <div class="max-w-xl">
+            <span class="text-sm font-extrabold uppercase tracking-[0.24em] text-tertiary/90">
+              Další krok
+            </span>
+            <h2 class="mt-5 text-4xl font-extrabold leading-tight text-white sm:text-5xl">
+              Inspiruje vás naše práce?
+            </h2>
+            <p class="mt-6 text-lg leading-8 text-white/78">
+              Pojďme společně navrhnout rekonstrukci, která bude praktická, poctivě provedená a přizpůsobená tomu, jak váš byt skutečně funguje.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a href="index.html#kontakt" class="btn-primary bg-tertiary text-primary hover:bg-tertiary/90 hover:text-primary">
+                Domluvit konzultaci
+              </a>
+            </div>
+          </div>
+
+          <div class="rounded-card border border-white/10 bg-white/6 p-8 shadow-card backdrop-blur-sm sm:p-10">
+            <div class="space-y-5">
+              <div class="portfolio-check">
+                <span class="portfolio-check-icon">
+                  <i data-lucide="badge-check" class="h-4 w-4"></i>
+                </span>
+                <span>Osobní přístup a konzultace od prvního zaměření</span>
+              </div>
+              <div class="portfolio-check">
+                <span class="portfolio-check-icon">
+                  <i data-lucide="badge-check" class="h-4 w-4"></i>
+                </span>
+                <span>Kompletní realizace včetně rozvodů, obkladů a finální montáže</span>
+              </div>
+              <div class="portfolio-check">
+                <span class="portfolio-check-icon">
+                  <i data-lucide="badge-check" class="h-4 w-4"></i>
+                </span>
+                <span>Důraz na kvalitu detailu, čisté provedení a funkční výsledek</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer></footer>
+    <footer class="border-t border-border/80 bg-white">
+      <div class="container-shell py-14 sm:py-16 lg:py-20">
+        <div class="grid gap-10 border-b border-border/80 pb-12 sm:pb-14 lg:grid-cols-[minmax(0,1.1fr)_repeat(3,minmax(0,0.75fr))] lg:gap-12">
+          <div class="max-w-sm">
+            <p class="text-[1.65rem] font-extrabold tracking-[-0.05em] text-primary">
+              Renobyty
+            </p>
+            <p class="mt-5 text-[1.02rem] leading-8 text-secondary">
+              Rekonstrukce koupelen, bytových jader a interiérů s důrazem na kvalitní řemeslo a čisté provedení.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="footer-title">Navigace</h3>
+            <div class="mt-5 flex flex-col gap-2">
+              <a href="/index.html" class="footer-link">Domů</a>
+              <a href="/services.html" class="footer-link">Služby</a>
+              <a href="/portfolio.html" class="footer-link text-primary">Realizace</a>
+              <a href="index.html#kontakt" class="footer-link">Kontakt</a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="footer-title">Právní informace</h3>
+            <div class="mt-5 flex flex-col gap-2">
+              <a href="#" class="footer-link">Privacy Policy</a>
+              <a href="#" class="footer-link">Terms of Service</a>
+              <a href="#" class="footer-link">Cookie Settings</a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="footer-title">Kontaktujte nás</h3>
+            <div class="mt-5 space-y-2 text-[0.98rem] leading-7 text-secondary">
+              <p>+420 607 634 916</p>
+              <p>info@renobyty.cz</p>
+              <p>Praha, Česká republika</p>
+            </div>
+            <div class="mt-6 flex items-center gap-3 text-secondary">
+              <a href="tel:+420607634916" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border transition duration-200 hover:border-primary hover:text-primary">
+                <i data-lucide="phone" class="h-4 w-4"></i>
+              </a>
+              <a href="mailto:info@renobyty.cz" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border transition duration-200 hover:border-primary hover:text-primary">
+                <i data-lucide="mail" class="h-4 w-4"></i>
+              </a>
+              <a href="index.html#kontakt" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border transition duration-200 hover:border-primary hover:text-primary">
+                <i data-lucide="messages-square" class="h-4 w-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 text-sm text-secondary">
+          <p>© 2024 Renobyty. Architectural Renovation Excellence.</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
