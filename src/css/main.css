@@ -79,19 +79,38 @@
   }
 
   .btn {
-    @apply inline-flex items-center justify-center rounded-pill px-6 py-3 text-sm font-bold tracking-wide transition duration-200 focus:outline-none focus:ring-4 focus:ring-primary/15;
+    @apply inline-flex items-center justify-center rounded-pill px-6 py-3 text-sm font-bold tracking-wide transition-all duration-200 ease-out focus:outline-none focus:ring-4 focus:ring-primary/15;
   }
 
   .btn-primary {
-    @apply btn bg-primary text-neutral shadow-soft hover:bg-primary/90 focus:ring-primary/20;
+    @apply btn bg-primary text-neutral shadow-soft hover:-translate-y-px hover:bg-primary/90 hover:shadow-soft focus:ring-primary/20;
   }
 
   .btn-secondary {
-    @apply btn bg-white text-primary ring-1 ring-border hover:bg-neutral;
+    @apply btn bg-white text-primary ring-1 ring-border hover:-translate-y-px hover:bg-neutral hover:shadow-soft;
   }
 
   .btn-accent {
-    @apply btn bg-tertiary text-white shadow-soft hover:bg-tertiary/90;
+    @apply btn bg-tertiary text-white shadow-soft hover:-translate-y-px hover:bg-tertiary/90 hover:shadow-soft;
+  }
+
+  .btn-portfolio-back {
+    @apply btn border border-white/70 bg-white/10 text-white/90 ring-0 transition duration-200 ease-out hover:-translate-y-px hover:border-white/80 hover:bg-white/15 hover:text-white;
+  }
+
+  .project-back-link {
+    @apply inline-flex items-center gap-2 text-sm font-semibold text-neutral/70 transition-colors duration-200 ease-out hover:text-tertiary focus:outline-none focus-visible:text-tertiary;
+    transition-duration: 220ms;
+  }
+
+  .project-back-link-icon {
+    @apply h-4 w-4 transition-transform ease-out;
+    transition-duration: 220ms;
+  }
+
+  .project-back-link:hover .project-back-link-icon,
+  .project-back-link:focus-visible .project-back-link-icon {
+    transform: translateX(-3px);
   }
 
   .btn-outline {
@@ -119,11 +138,24 @@
   }
 
   .nav-link {
-    @apply inline-flex items-center border-b-2 border-transparent px-0 py-2 text-[1.05rem] font-extrabold tracking-tight text-secondary hover:border-tertiary hover:text-primary focus:outline-none focus-visible:border-tertiary focus-visible:text-primary;
+    @apply relative inline-flex items-center px-0 py-2 text-[1.05rem] font-extrabold tracking-tight text-secondary hover:text-primary focus:outline-none focus-visible:text-primary;
+  }
+
+  .nav-link::after {
+    @apply absolute inset-x-0 bottom-0 h-0.5 bg-tertiary content-[''];
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 220ms ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after,
+  .nav-link-active::after {
+    transform: scaleX(1);
   }
 
   .nav-link-active {
-    @apply border-tertiary text-primary;
+    @apply text-primary;
   }
 
   .mobile-menu-panel {
@@ -159,11 +191,19 @@
   }
 
   .footer-link {
-    @apply text-[0.98rem] leading-7 text-secondary transition duration-200 hover:text-primary;
+    @apply text-[0.98rem] leading-7 text-secondary transition-colors duration-200 ease-out hover:text-tertiary;
+  }
+
+  .footer-link-active {
+    @apply font-bold text-tertiary;
+  }
+
+  .footer-icon {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-secondary transition-colors duration-200 ease-out hover:border-tertiary hover:bg-tertiary/10 hover:text-tertiary;
   }
 
   .mobile-action-link {
-    @apply flex min-w-0 flex-1 flex-col items-center justify-center gap-1 rounded-soft px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-neutral/80 transition duration-200;
+    @apply flex min-w-0 flex-1 flex-col items-center justify-center gap-1 rounded-soft px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-neutral/80 transition-colors duration-200 ease-out hover:text-tertiary;
   }
 
   .portfolio-filter {
@@ -186,12 +226,23 @@
     @apply border-primary bg-primary text-neutral shadow-card;
   }
 
+  .portfolio-grid-staggered {
+    @apply mt-12 grid items-start gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-10 xl:gap-y-16;
+  }
+
+  @screen xl {
+    .portfolio-grid-staggered .portfolio-card:nth-child(3n + 2) {
+      margin-top: 3.25rem;
+    }
+  }
+
   .portfolio-card {
-    @apply relative flex min-h-[24rem] overflow-hidden rounded-card border border-border bg-primary shadow-card transition duration-300 hover:-translate-y-1;
+    @apply relative isolate flex h-[24rem] overflow-hidden rounded-card border border-border bg-primary shadow-card;
   }
 
   .portfolio-card-image {
-    @apply absolute inset-0 h-full w-full object-cover transition duration-500;
+    @apply absolute inset-0 block h-full w-full object-cover transition-transform duration-500 ease-out;
+    will-change: transform;
   }
 
   .portfolio-card-overlay {
@@ -217,7 +268,7 @@
   }
 
   .portfolio-card-arrow {
-    @apply inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white backdrop-blur-sm transition duration-200;
+    @apply inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white backdrop-blur-sm transition duration-200 ease-out;
     border: 1px solid rgba(255, 255, 255, 0.12);
     background-color: rgba(255, 255, 255, 0.06);
   }
@@ -227,8 +278,8 @@
   }
 
   .portfolio-card:hover .portfolio-card-arrow {
-    @apply text-tertiary;
-    border-color: rgba(212, 140, 69, 0.6);
+    @apply translate-x-0.5 text-tertiary;
+    border-color: rgba(212, 140, 69, 0.4);
   }
 
   .portfolio-check {

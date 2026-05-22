@@ -87,14 +87,14 @@
         <div class="absolute inset-y-0 right-[-8rem] w-72 rounded-full bg-tertiary/10 blur-3xl"></div>
         <div class="container-shell relative grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.92fr)] lg:items-end lg:gap-14">
           <div>
-            <a href="/portfolio.html" class="inline-flex items-center gap-2 text-sm font-semibold text-white/72 transition duration-200 hover:text-white">
-              <i data-lucide="arrow-left" class="h-4 w-4"></i>
+            <a href="/portfolio.html" class="project-back-link">
+              <i data-lucide="arrow-left" class="project-back-link-icon"></i>
               <span>Zpět na portfolio</span>
             </a>
-            <span class="mt-8 inline-flex rounded-pill border border-tertiary/25 bg-tertiary/12 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.24em] text-tertiary/95">
+            <span class="mt-10 flex w-fit rounded-pill border border-tertiary/25 bg-tertiary/12 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.24em] text-tertiary/95">
               Detail projektu
             </span>
-            <h1 class="mt-6 max-w-[11ch] text-5xl leading-[1.02] text-white sm:text-6xl">
+            <h1 class="mt-10 max-w-[11ch] text-5xl leading-[1.02] text-white sm:text-6xl">
               Ústí nad Labem
             </h1>
             <p class="mt-5 text-xl font-semibold leading-8 text-white/92">
@@ -258,10 +258,10 @@
             </p>
           </div>
           <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:justify-end">
-            <a href="index.html#kontakt" class="btn-primary bg-tertiary text-primary hover:bg-tertiary/90 hover:text-primary">
+            <a href="index.html#kontakt" class="btn-primary bg-tertiary text-primary duration-200 ease-out hover:-translate-y-px hover:bg-tertiary/90 hover:text-primary">
               Odeslat poptávku
             </a>
-            <a href="/portfolio.html" class="btn-secondary border border-white/14 bg-white/4 text-white ring-0 hover:bg-white/10 hover:text-white">
+            <a href="/portfolio.html" class="btn-portfolio-back">
               Zpět na realizace
             </a>
           </div>
@@ -271,7 +271,7 @@
 
     <footer class="border-t border-border/80 bg-white">
       <div class="container-shell py-14 sm:py-16 lg:py-20">
-        <div class="grid gap-10 border-b border-border/80 pb-12 sm:pb-14 lg:grid-cols-[minmax(0,1.1fr)_repeat(3,minmax(0,0.75fr))] lg:gap-12">
+        <div class="grid gap-10 border-b border-border/80 pb-12 sm:pb-14 lg:grid-cols-[minmax(0,1.2fr)_repeat(2,minmax(0,0.9fr))] lg:gap-12">
           <div class="max-w-sm">
             <p class="text-[1.65rem] font-extrabold tracking-[-0.05em] text-primary">
               Renobyty
@@ -279,16 +279,6 @@
             <p class="mt-5 text-[1.02rem] leading-8 text-secondary">
               Rekonstrukce koupelen, bytových jader a interiérů s důrazem na kvalitní řemeslo a čisté provedení.
             </p>
-          </div>
-
-          <div>
-            <h3 class="footer-title">Navigace</h3>
-            <div class="mt-5 flex flex-col gap-2">
-              <a href="/index.html" class="footer-link">Domů</a>
-              <a href="/services.html" class="footer-link">Služby</a>
-              <a href="/portfolio.html" class="footer-link text-primary">Realizace</a>
-              <a href="index.html#kontakt" class="footer-link">Kontakt</a>
-            </div>
           </div>
 
           <div>
@@ -308,13 +298,13 @@
               <p>Praha, Česká republika</p>
             </div>
             <div class="mt-6 flex items-center gap-3 text-secondary">
-              <a href="tel:+420607634916" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border transition duration-200 hover:border-primary hover:text-primary">
+              <a href="tel:+420607634916" class="footer-icon">
                 <i data-lucide="phone" class="h-4 w-4"></i>
               </a>
-              <a href="mailto:info@renobyty.cz" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border transition duration-200 hover:border-primary hover:text-primary">
+              <a href="mailto:info@renobyty.cz" class="footer-icon">
                 <i data-lucide="mail" class="h-4 w-4"></i>
               </a>
-              <a href="index.html#kontakt" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border transition duration-200 hover:border-primary hover:text-primary">
+              <a href="index.html#kontakt" class="footer-icon">
                 <i data-lucide="messages-square" class="h-4 w-4"></i>
               </a>
             </div>

@@ -14,12 +14,16 @@
     <script type="module" src="/src/js/main.js"></script>
   </head>
   <body class="bg-white text-ink">
-    <header class="z-50 md:sticky md:top-0">
-      <nav class="navbar-shell" aria-label="Hlavní navigace" data-nav>
-        <div class="navbar-inner grid min-h-[6.75rem] grid-cols-[auto_1fr_auto] items-center gap-3 py-4 lg:min-h-[7.25rem] lg:grid-cols-[minmax(11rem,1fr)_auto_auto] lg:gap-6 min-[1150px]:min-h-[8rem] min-[1150px]:grid-cols-[minmax(16rem,1fr)_auto_minmax(20rem,1fr)] min-[1150px]:gap-12">
+    <header class="sticky top-0 z-50 -mb-[5.5rem] sm:-mb-[5.75rem] lg:-mb-[6rem]">
+      <nav
+        class="border-b border-neutral/10 bg-primary/10 backdrop-blur-lg md:shadow-soft"
+        aria-label="Hlavní navigace"
+        data-nav
+      >
+        <div class="navbar-inner grid min-h-[5.5rem] grid-cols-[auto_1fr_auto] items-center gap-3 py-2 sm:min-h-[5.75rem] sm:py-3 lg:min-h-[6rem] lg:grid-cols-[minmax(11rem,1fr)_auto_auto] lg:gap-6 min-[1150px]:grid-cols-[minmax(16rem,1fr)_auto_minmax(20rem,1fr)] min-[1150px]:gap-12">
           <button
             type="button"
-            class="inline-flex items-center justify-center rounded-pill p-2.5 text-primary transition hover:bg-neutral focus:outline-none focus:ring-2 focus:ring-primary/15 lg:hidden"
+            class="inline-flex items-center justify-center rounded-pill bg-white/10 p-2.5 text-neutral transition hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-neutral/20 lg:hidden"
             aria-expanded="false"
             aria-controls="mobile-menu"
             aria-label="Otevřít menu"
@@ -32,48 +36,48 @@
             </span>
           </button>
 
-          <a href="/index.html" class="text-[2rem] font-extrabold uppercase tracking-[-0.05em] text-primary sm:text-[2.15rem] lg:text-[1.95rem] min-[1150px]:text-[2.35rem]">
+          <a href="/index.html" class="text-[2rem] font-extrabold uppercase tracking-[-0.05em] text-neutral sm:text-[2.15rem] lg:text-[1.95rem] min-[1150px]:text-[2.35rem]">
             RENOBYTY
           </a>
 
           <div class="hidden items-center justify-center gap-8 min-[1150px]:gap-12 xl:gap-16 lg:flex">
-            <a href="/index.html" class="nav-link">Domů</a>
-            <a href="/services.html" class="nav-link">Služby</a>
-            <a href="/portfolio.html" class="nav-link nav-link-active">Portfolio</a>
-            <a href="index.html#kontakt" class="nav-link">Kontakt</a>
+            <a href="/index.html" class="nav-link border-transparent !text-neutral/95 hover:border-tertiary hover:!text-neutral">Domů</a>
+            <a href="/services.html" class="nav-link border-transparent !text-neutral/95 hover:border-tertiary hover:!text-neutral">Služby</a>
+            <a href="/portfolio.html" class="nav-link nav-link-active border-tertiary text-neutral hover:text-neutral">Portfolio</a>
+            <a href="index.html#kontakt" class="nav-link border-transparent !text-neutral/95 hover:border-tertiary hover:!text-neutral">Kontakt</a>
           </div>
 
-          <div class="ml-auto inline-flex items-center rounded-full border border-border bg-neutral px-4 py-2 text-[0.95rem] font-bold text-primary shadow-soft sm:px-5 sm:py-2.5 lg:hidden">
+          <div class="ml-auto inline-flex items-center rounded-full border border-neutral/20 bg-white/10 px-4 py-2 text-[0.95rem] font-bold text-neutral shadow-soft backdrop-blur-sm sm:px-5 sm:py-2.5 lg:hidden">
             <span>CZ</span>
-            <span class="mx-2 text-border">|</span>
+            <span class="mx-2 text-neutral/35">|</span>
             <span>EN</span>
           </div>
 
           <div class="hidden items-center justify-self-end gap-3 min-[1150px]:gap-5 xl:gap-8 lg:flex">
-            <div class="inline-flex items-center rounded-full border border-border bg-neutral px-4 py-2.5 text-sm font-bold text-primary shadow-soft min-[1150px]:px-6 min-[1150px]:py-3.5 min-[1150px]:text-[1.05rem]">
+            <div class="inline-flex items-center rounded-full border border-neutral/20 bg-neutral/10 px-4 py-2.5 text-sm font-bold text-neutral shadow-soft backdrop-blur-sm min-[1150px]:px-6 min-[1150px]:py-3.5 min-[1150px]:text-[1.05rem]">
               <span>CZ</span>
-              <span class="mx-2 text-border">|</span>
+              <span class="mx-2 text-neutral/35">|</span>
               <span>EN</span>
             </div>
-            <a href="index.html#kontakt" class="btn-primary min-w-[10.75rem] px-5 py-3 text-center text-sm min-[1150px]:min-w-[13.5rem] min-[1150px]:px-8 min-[1150px]:py-4 min-[1150px]:text-[1.05rem]">
+            <a href="index.html#kontakt" class="btn-primary min-w-[10.75rem] bg-primary px-5 py-3 text-center text-sm text-neutral hover:bg-primary/90 min-[1150px]:min-w-[13.5rem] min-[1150px]:px-8 min-[1150px]:py-4 min-[1150px]:text-[1.05rem]">
               Nezávazná nabídka
             </a>
           </div>
 
-          <div id="mobile-menu" class="mobile-menu-panel hidden lg:hidden col-span-full" data-nav-panel>
+          <div id="mobile-menu" class="mobile-menu-panel hidden lg:hidden col-span-full border-neutral/15 bg-primary/72 backdrop-blur-md" data-nav-panel>
             <div class="flex flex-col gap-2">
-              <a href="/index.html" class="nav-link justify-start" data-nav-close>Domů</a>
-              <a href="/services.html" class="nav-link justify-start" data-nav-close>Služby</a>
-              <a href="/portfolio.html" class="nav-link nav-link-active justify-start" data-nav-close>Portfolio</a>
-              <a href="index.html#kontakt" class="nav-link justify-start" data-nav-close>Kontakt</a>
+              <a href="/index.html" class="nav-link justify-start border-transparent !text-neutral/95 hover:border-tertiary hover:!text-neutral" data-nav-close>Domů</a>
+              <a href="/services.html" class="nav-link justify-start border-transparent !text-neutral/95 hover:border-tertiary hover:!text-neutral" data-nav-close>Služby</a>
+              <a href="/portfolio.html" class="nav-link nav-link-active justify-start border-tertiary text-neutral hover:text-neutral" data-nav-close>Portfolio</a>
+              <a href="index.html#kontakt" class="nav-link justify-start border-transparent !text-neutral/95 hover:border-tertiary hover:!text-neutral" data-nav-close>Kontakt</a>
             </div>
             <div class="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div class="inline-flex items-center rounded-full border border-border bg-neutral px-5 py-3 text-sm font-bold text-primary shadow-soft">
+              <div class="inline-flex items-center rounded-full border border-neutral/20 bg-neutral/10 px-5 py-3 text-sm font-bold text-neutral shadow-soft backdrop-blur-sm">
                 <span>CZ</span>
-                <span class="mx-2 text-border">|</span>
+                <span class="mx-2 text-neutral/35">|</span>
                 <span>EN</span>
               </div>
-              <a href="index.html#kontakt" class="btn-primary px-6 py-3 text-center" data-nav-close>
+              <a href="index.html#kontakt" class="btn-primary bg-primary px-6 py-3 text-center text-neutral hover:bg-primary/90" data-nav-close>
                 Nezávazná nabídka
               </a>
             </div>
@@ -147,12 +151,9 @@
                 Zakázky, které stojí na detailu, funkci a čistém provedení
               </h2>
             </div>
-            <p class="max-w-xl text-base leading-7 text-secondary sm:text-right">
-              Každá karta vede zatím na jeden detail projektu, který můžeme později snadno rozšířit na samostatné stránky pro každou realizaci.
-            </p>
           </div>
 
-          <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div class="portfolio-grid-staggered">
             <a href="/portfolio-detail.html" class="portfolio-card" data-filter-item data-categories="koupelny bytova-jadra">
               <img
                 src="/images/portfolio1.jpg"
@@ -278,7 +279,7 @@
 
       <section class="relative overflow-hidden bg-primary py-16 text-neutral sm:py-20 lg:py-24">
         <div class="absolute right-[-8rem] top-[-6rem] h-64 w-64 rounded-full bg-tertiary/12 blur-3xl"></div>
-        <div class="absolute bottom-[-8rem] right-[-4rem] h-72 w-72 rotate-[32deg] bg-white/5"></div>
+        <div class="absolute bottom-[-16rem] right-[21rem] h-[24rem] w-[24rem] rotate-[32deg] bg-white/5"></div>
 
         <div class="container-shell relative grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
           <div class="max-w-xl">
@@ -327,7 +328,7 @@
 
     <footer class="border-t border-border/80 bg-white">
       <div class="container-shell py-14 sm:py-16 lg:py-20">
-        <div class="grid gap-10 border-b border-border/80 pb-12 sm:pb-14 lg:grid-cols-[minmax(0,1.1fr)_repeat(3,minmax(0,0.75fr))] lg:gap-12">
+        <div class="grid gap-10 border-b border-border/80 pb-12 sm:pb-14 lg:grid-cols-[minmax(0,1.2fr)_repeat(2,minmax(0,0.9fr))] lg:gap-12">
           <div class="max-w-sm">
             <p class="text-[1.65rem] font-extrabold tracking-[-0.05em] text-primary">
               Renobyty
@@ -335,16 +336,6 @@
             <p class="mt-5 text-[1.02rem] leading-8 text-secondary">
               Rekonstrukce koupelen, bytových jader a interiérů s důrazem na kvalitní řemeslo a čisté provedení.
             </p>
-          </div>
-
-          <div>
-            <h3 class="footer-title">Navigace</h3>
-            <div class="mt-5 flex flex-col gap-2">
-              <a href="/index.html" class="footer-link">Domů</a>
-              <a href="/services.html" class="footer-link">Služby</a>
-              <a href="/portfolio.html" class="footer-link text-primary">Realizace</a>
-              <a href="index.html#kontakt" class="footer-link">Kontakt</a>
-            </div>
           </div>
 
           <div>
@@ -364,13 +355,13 @@
               <p>Praha, Česká republika</p>
             </div>
             <div class="mt-6 flex items-center gap-3 text-secondary">
-              <a href="tel:+420607634916" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border transition duration-200 hover:border-primary hover:text-primary">
+              <a href="tel:+420607634916" class="footer-icon">
                 <i data-lucide="phone" class="h-4 w-4"></i>
               </a>
-              <a href="mailto:info@renobyty.cz" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border transition duration-200 hover:border-primary hover:text-primary">
+              <a href="mailto:info@renobyty.cz" class="footer-icon">
                 <i data-lucide="mail" class="h-4 w-4"></i>
               </a>
-              <a href="index.html#kontakt" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border transition duration-200 hover:border-primary hover:text-primary">
+              <a href="index.html#kontakt" class="footer-icon">
                 <i data-lucide="messages-square" class="h-4 w-4"></i>
               </a>
             </div>
