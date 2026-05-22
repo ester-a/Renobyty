@@ -6,13 +6,43 @@ if (window.lucide?.createIcons) {
 
 const navInstances = document.querySelectorAll("[data-nav]");
 const filterGroups = document.querySelectorAll("[data-filter-group]");
-const revealItems = document.querySelectorAll(".reveal-on-scroll");
+const revealGroups = [...document.querySelectorAll("[data-reveal-group]")];
+const groupedRevealItems = new Set();
+const revealTargets = new Map();
 
-if (revealItems.length) {
+revealGroups.forEach((group) => {
+  const rows = new Map();
+  const groupItems = [...group.querySelectorAll(".reveal-on-scroll")];
+
+  groupItems.forEach((item) => {
+    groupedRevealItems.add(item);
+
+    const row = item.dataset.revealRow || "all";
+    const rowItems = rows.get(row) || [];
+
+    rowItems.push(item);
+    rows.set(row, rowItems);
+  });
+
+  rows.forEach((items) => {
+    revealTargets.set(items[0], items);
+  });
+});
+
+const revealItems = [...document.querySelectorAll(".reveal-on-scroll")].filter(
+  (item) => !groupedRevealItems.has(item),
+);
+const allRevealItems = document.querySelectorAll(".reveal-on-scroll");
+
+revealItems.forEach((item) => {
+  revealTargets.set(item, [item]);
+});
+
+if (allRevealItems.length) {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   if (reducedMotion || !("IntersectionObserver" in window)) {
-    revealItems.forEach((item) => {
+    allRevealItems.forEach((item) => {
       item.classList.add("is-visible");
     });
   } else {
@@ -23,7 +53,11 @@ if (revealItems.length) {
             return;
           }
 
-          entry.target.classList.add("is-visible");
+          const items = revealTargets.get(entry.target) || [entry.target];
+
+          items.forEach((item) => {
+            item.classList.add("is-visible");
+          });
           observer.unobserve(entry.target);
         });
       },
@@ -33,8 +67,10 @@ if (revealItems.length) {
       },
     );
 
-    revealItems.forEach((item) => {
-      revealObserver.observe(item);
+    revealTargets.forEach((items, target) => {
+      if (items.length) {
+        revealObserver.observe(target);
+      }
     });
   }
 }
