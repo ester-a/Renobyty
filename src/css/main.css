@@ -163,7 +163,7 @@
   }
 
   .service-card {
-    @apply flex h-full flex-col items-start rounded-card border border-border bg-white p-8 shadow-soft transition duration-200 hover:-translate-y-1 hover:border-primary/20 hover:shadow-card;
+    @apply flex h-full flex-col items-start rounded-card border border-border bg-white p-8 shadow-soft transition duration-200 ease-out hover:-translate-y-px hover:border-primary/10 hover:shadow-soft;
   }
 
   .service-icon {
@@ -297,5 +297,41 @@
 
   .detail-list-icon {
     @apply mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-neutral;
+  }
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 600ms ease-out,
+    transform 600ms ease-out;
+  transition-delay: var(--reveal-delay-mobile, var(--reveal-delay, 0ms));
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  will-change: auto;
+}
+
+.service-card.reveal-on-scroll.is-visible:hover {
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    transition-delay: 0ms;
+    will-change: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .reveal-on-scroll {
+    transition-delay: var(--reveal-delay, 0ms);
   }
 }
