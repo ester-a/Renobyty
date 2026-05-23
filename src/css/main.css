@@ -427,3 +427,26 @@
     transition-delay: var(--reveal-delay, 0ms);
   }
 }
+
+@media (max-width: 767px) {
+  .mobile-hero-section {
+    min-height: 88svh;
+  }
+
+  .mobile-hero-content {
+    display: flex;
+    min-height: 88svh;
+    align-items: center;
+    padding-top: 6.75rem;
+    padding-bottom: 7.25rem;
+  }
+
+  .mobile-hero-copy {
+    padding-bottom: 0 !important;
+  }
+
+  .mobile-hero-actions {
+    margin-top: 1.5rem !important;
+    gap: 0.75rem !important;
+  }
+}
