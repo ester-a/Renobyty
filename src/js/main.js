@@ -79,19 +79,38 @@ navInstances.forEach((nav) => {
   const toggle = nav.querySelector("[data-nav-toggle]");
   const panel = nav.querySelector("[data-nav-panel]");
   const links = nav.querySelectorAll("[data-nav-close]");
+  let closeTimer;
 
   if (!toggle || !panel) {
     return;
   }
 
   const closeMenu = () => {
+    clearTimeout(closeTimer);
     toggle.setAttribute("aria-expanded", "false");
-    panel.classList.add("hidden");
+    toggle.setAttribute("aria-label", "Otevřít menu");
+    panel.setAttribute("aria-hidden", "true");
+    nav.classList.remove("is-menu-open");
+    document.body.classList.remove("mobile-menu-open");
+    panel.classList.remove("is-open");
+
+    closeTimer = window.setTimeout(() => {
+      panel.classList.add("hidden");
+    }, 300);
   };
 
   const openMenu = () => {
+    clearTimeout(closeTimer);
     toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Zavřít menu");
+    panel.setAttribute("aria-hidden", "false");
+    nav.classList.add("is-menu-open");
+    document.body.classList.add("mobile-menu-open");
     panel.classList.remove("hidden");
+
+    window.requestAnimationFrame(() => {
+      panel.classList.add("is-open");
+    });
   };
 
   toggle.addEventListener("click", () => {

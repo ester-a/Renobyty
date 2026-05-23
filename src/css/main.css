@@ -159,8 +159,66 @@
     @apply text-primary;
   }
 
+  .hamburger-lines {
+    @apply relative flex h-5 w-6 flex-col justify-between;
+  }
+
+  .hamburger-line {
+    @apply block h-0.5 w-6 origin-center bg-current transition duration-300 ease-out;
+  }
+
+  [data-nav-toggle][aria-expanded="true"] .hamburger-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  [data-nav-toggle][aria-expanded="true"] .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  [data-nav-toggle][aria-expanded="true"] .hamburger-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
   .mobile-menu-panel {
-    @apply mt-4 rounded-card border border-border bg-neutral p-4 shadow-card;
+    @apply fixed inset-x-0 top-[5.5rem] z-40 mt-0 max-h-[72vh] overflow-y-auto border-y border-neutral/10 bg-primary/90 px-8 py-8 opacity-0 shadow-card backdrop-blur-xl transition duration-300 ease-out sm:top-[5.75rem] sm:px-10 lg:hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+  }
+
+  .mobile-menu-panel .nav-link {
+    @apply flex w-full py-2.5 text-[2rem] font-extrabold leading-tight !text-neutral/90 opacity-100 hover:!text-tertiary focus-visible:!text-tertiary sm:text-4xl;
+    visibility: visible;
+  }
+
+  .mobile-menu-panel .nav-link-active {
+    @apply !text-tertiary;
+  }
+
+  .mobile-menu-panel .nav-link::after {
+    @apply left-0 right-auto w-12;
+  }
+
+  .mobile-menu-panel .btn-primary {
+    @apply w-full px-5 py-3 !bg-tertiary !text-primary hover:!bg-tertiary/90 hover:!text-primary;
+  }
+
+  .mobile-menu-panel.is-open {
+    @apply opacity-100;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  [data-nav].is-menu-open {
+    @apply border-neutral/10;
+  }
+
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
+
+  body.mobile-menu-open .mobile-action-bar {
+    @apply opacity-0;
+    pointer-events: none;
   }
 
   .service-card {
@@ -338,6 +396,11 @@
 @media (prefers-reduced-motion: reduce) {
   .page-main {
     animation: none;
+  }
+
+  .mobile-menu-panel,
+  .hamburger-line {
+    transition: none;
   }
 
   .reveal-on-scroll {

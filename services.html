@@ -41,10 +41,10 @@
             aria-label="Otevřít menu"
             data-nav-toggle
           >
-            <span class="flex flex-col gap-1.5">
-              <span class="h-0.5 w-6 bg-current"></span>
-              <span class="h-0.5 w-6 bg-current"></span>
-              <span class="h-0.5 w-6 bg-current"></span>
+            <span class="hamburger-lines">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
             </span>
           </button>
 
@@ -76,19 +76,14 @@
             </a>
           </div>
 
-          <div id="mobile-menu" class="mobile-menu-panel hidden lg:hidden col-span-full border-neutral/15 bg-primary/72 backdrop-blur-md" data-nav-panel>
+          <div id="mobile-menu" class="mobile-menu-panel hidden lg:hidden col-span-full backdrop-blur-md" aria-hidden="true" data-nav-panel>
             <div class="flex flex-col gap-2">
               <a href="/index.html" class="nav-link justify-start border-transparent !text-neutral/95 hover:border-tertiary hover:!text-neutral" data-nav-close>Domů</a>
               <a href="/services.html" class="nav-link nav-link-active justify-start border-tertiary text-neutral hover:text-neutral" data-nav-close>Služby</a>
               <a href="/portfolio.html" class="nav-link justify-start border-transparent !text-neutral/95 hover:border-tertiary hover:!text-neutral" data-nav-close>Portfolio</a>
               <a href="index.html#kontakt" class="nav-link justify-start border-transparent !text-neutral/95 hover:border-tertiary hover:!text-neutral" data-nav-close>Kontakt</a>
             </div>
-            <div class="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div class="inline-flex items-center rounded-full border border-neutral/20 bg-neutral/10 px-5 py-3 text-sm font-bold text-neutral shadow-soft backdrop-blur-sm">
-                <span>CZ</span>
-                <span class="mx-2 text-neutral/35">|</span>
-                <span>EN</span>
-              </div>
+            <div class="mt-4">
               <a href="index.html#kontakt" class="btn-primary bg-primary px-6 py-3 text-center text-neutral hover:bg-primary/90" data-nav-close>
                 Nezávazná nabídka
               </a>
@@ -365,7 +360,7 @@
       </div>
     </footer>
 
-    <div class="fixed inset-x-0 bottom-4 z-50 px-4 lg:hidden">
+    <div class="mobile-action-bar fixed inset-x-0 bottom-4 z-50 px-4 transition-opacity duration-200 ease-out lg:hidden">
       <div class="mx-auto flex max-w-md items-center gap-1 rounded-card bg-primary p-2 shadow-card ring-1 ring-primary/15">
         <a href="tel:+420607634916" class="mobile-action-link">
           <i data-lucide="phone" class="h-4 w-4"></i>
