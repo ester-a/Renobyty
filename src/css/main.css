@@ -261,6 +261,16 @@
     @apply inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-secondary transition-colors duration-200 ease-out hover:border-tertiary hover:bg-tertiary/10 hover:text-tertiary;
   }
 
+  .footer-safe-bottom {
+    padding-bottom: calc(8rem + env(safe-area-inset-bottom));
+  }
+
+  @screen lg {
+    .footer-safe-bottom {
+      padding-bottom: 0;
+    }
+  }
+
   .mobile-action-link {
     @apply flex min-w-0 flex-1 flex-col items-center justify-center gap-1 rounded-soft px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-neutral/80 transition-colors duration-200 ease-out hover:text-tertiary;
   }
